@@ -160,7 +160,7 @@ const data = reactive({
 const payload = computed(() => {
   return {
     NamaPelanggan: data.namaPelanggan,
-    Tanggal: date.value,
+    Tanggal: format(date.value, 'd MMM yyyy'),
     Jam: time.value,
     Total: data.total,
     BayarTunai: data.bayar,
