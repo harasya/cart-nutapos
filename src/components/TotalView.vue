@@ -72,7 +72,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['submit'])
+const emit = defineEmits(['submit', 'cancel'])
 
 const total = computed(() => {
   return props.items.reduce((total, item) => {
@@ -93,6 +93,10 @@ const onSubmit = () => {
     kembali: kembali.value,
     total: total.value,
   })
+}
+
+const onCancel = () => {
+  emit('cancel')
 }
 </script>
 

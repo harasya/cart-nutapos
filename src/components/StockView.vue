@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-  <TotalView :items @submit="onSubmit" />
+  <TotalView :items @submit="onSubmit" @cancel="onCancel" />
 </template>
 
 <script setup>
@@ -178,6 +178,15 @@ const onSubmit = (item) => {
   Object.assign(data, item)
 
   alert(JSON.stringify(payload.value, null, 2))
+}
+
+const onCancel = () => {
+  Object.assign(data, {
+    namaPelanggan: '',
+    total: 0,
+    bayar: 0,
+    kembali: 0,
+  })
 }
 
 const onAddItem = () => {
